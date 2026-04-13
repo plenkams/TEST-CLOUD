@@ -14,7 +14,7 @@ document.getElementById('donateForm').addEventListener('submit', function(e){
   const amount = Number(document.getElementById('amount').value);
   const monthly = document.getElementById('monthly').checked;
 
-  const words = fio.split(/\\s+/).filter(Boolean);
+  const words = fullName.split(/\s+/).filter(Boolean);
   if(words.length === 0 || words.length > 5){
     alert('ФИО: максимум 5 слов');
     return;
