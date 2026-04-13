@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Благотворительный фонд</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<script src="https://widget.cloudpayments.ru/bundles/cloudpayments.js"></script>
+</head>
+
+<body>
+
+<div class="wrap">
+<h1>Благотворительный фонд</h1>
+
+<form id="donateForm">
+
+<label>ФИО</label>
+<input id="fio" required>
+
+<label>Email</label>
+<input id="email" required>
+
+<label>Телефон</label>
+<input id="phone" required placeholder="+79990000000">
+
+<label>Комментарий</label>
+<textarea id="comment"></textarea>
+
+<label>Сумма</label>
+<input id="amount" type="number" value="100">
+
+<div class="row">
+<input id="monthly" type="checkbox">
+<span>Ежемесячный платеж</span>
+</div>
+
+<button type="submit">Оплатить</button>
+
+</form>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

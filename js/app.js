@@ -1,0 +1,65 @@
+const publicId = 'pk_0a6d2638d233c9299c8fae7cd7e2e';
+
+document.getElementById('donateForm').addEventListener('submit', function(e){
+  e.preventDefault();
+
+  const fio = document.getElementById('fio').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const comment = document.getElementById('comment').value.trim();
+  const amount = Number(document.getElementById('amount').value);
+  const monthly = document.getElementById('monthly').checked;
+
+  const words = fio.split(/\\s+/).filter(Boolean);
+  if(words.length === 0 || words.length > 5){
+    alert('ФИО: максимум 5 слов');
+    return;
+  }
+
+  const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+  if(!emailRegex.test(email)){
+    alert('Некорректный email');
+    return;
+  }
+
+  const cleanPhone = phone.replace(/\\D/g,'');
+  if(cleanPhone.length < 10){
+    alert('Некорректный телефон');
+    return;
+  }
+
+  const widget = new cp.CloudPayments();
+
+  const intentParams = {
+    publicTerminalId: publicId,
+    amount: amount,
+    currency: 'RUB',
+    description: comment || 'Пожертвование',
+    paymentSchema: 'Single',
+    culture: 'ru-RU',
+    userInfo: {
+      accountId: fio,
+      fullName: fio,
+      phone: '+' + cleanPhone,
+      email: email
+    }
+  };
+
+  if(monthly){
+    intentParams.recurrent = {
+      interval: 'Month',
+      period: 1
+    };
+  }
+
+  widget.start(intentParams)
+    .then(function(result){
+      alert(monthly ? 'Оплата успешна. Подписка создана.' : 'Оплата успешна');
+      console.log(result);
+    })
+    .catch(function(err){
+      console.error(err);
+      alert('Ошибка оплаты');
+    });
+
+});
