@@ -43,39 +43,37 @@ document.getElementById('donateForm').addEventListener('submit', function (e) {
 
   const widget = new cp.CloudPayments();
 
-  const intentParams = {
-    publicTerminalId: publicId,
-    amount: amount,
-    currency: 'RUB',
-    description: 'Пожертвование',
-    paymentSchema: 'Single',
-    culture: 'ru-RU',
+const intentParams = {
+  publicTerminalId: publicId,
+  amount: amount,
+  currency: 'RUB',
+  description: 'Пожертвование',
+  paymentSchema: 'Single',
+  culture: 'ru-RU',
 
-    metadata: {
-      comment: comment
-    },
+  metadata: {
+    comment: comment
+  },
 
-    JsonData: {
-      comment: comment
-    },
+  comment: comment,
 
-    userInfo: {
-      accountId: email,
-      firstName: firstName,
-      lastName: lastName,
-      middleName: middleName,
-      fullName: fullName,
-     phone: '+' + cleanPhone,
-     email: email
-   }
-  };
-
-  if (monthly) {
-   intentParams.recurrent = {
-     interval: 'Month',
-     period: 1
-    };
+  userInfo: {
+    accountId: email,
+    firstName: firstName,
+    lastName: lastName,
+    middleName: middleName,
+    fullName: fullName,
+    phone: '+' + cleanPhone,
+    email: email
   }
+};
+
+if (monthly) {
+  intentParams.recurrent = {
+    interval: 'Month',
+    period: 1
+  };
+}
 
   widget.start(intentParams)
     .then(function (result) {
