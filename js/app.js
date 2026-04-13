@@ -47,7 +47,7 @@ document.getElementById('donateForm').addEventListener('submit', function (e) {
     publicTerminalId: publicId,
     amount: amount,
     currency: 'RUB',
-    description: comment || 'Пожертвование',
+    description: 'Пожертвование',
     paymentSchema: 'Single',
     culture: 'ru-RU',
 
