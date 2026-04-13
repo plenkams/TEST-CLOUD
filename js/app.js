@@ -51,7 +51,7 @@ document.getElementById('donateForm').addEventListener('submit', function (e) {
     paymentSchema: 'Single',
     culture: 'ru-RU',
 
-JsonData: {
+metadata: {
   comment: comment
 },
 
