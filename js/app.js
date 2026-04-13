@@ -16,11 +16,12 @@ document.getElementById('donateForm').addEventListener('submit', function(e){
     return;
   }
 
-  const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
-  if(!emailRegex.test(email)){
-    alert('Некорректный email');
-    return;
-  }
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(!emailRegex.test(email)){
+  alert('Некорректный email');
+  return;
+}
 
   const cleanPhone = phone.replace(/\\D/g,'');
   if(cleanPhone.length < 10){
