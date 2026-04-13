@@ -52,7 +52,7 @@ document.getElementById('donateForm').addEventListener('submit', function (e) {
     culture: 'ru-RU',
      metadata: {
       JsonData: {
-        comment: `clickid: ${comment}`
+        comment:comment
       }
     },
     userInfo: {
