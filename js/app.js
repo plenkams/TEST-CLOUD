@@ -43,7 +43,9 @@ document.getElementById('donateForm').addEventListener('submit', function(e){
     paymentSchema: 'Single',
     culture: 'ru-RU',
       metadata: {
-    comment: comment
+        cloudpayments: {
+          comment: comment
+        }
   },
     userInfo: {
     accountId: email,
