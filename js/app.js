@@ -50,11 +50,11 @@ document.getElementById('donateForm').addEventListener('submit', function (e) {
     description: 'Пожертвование',
     paymentSchema: 'Single',
     culture: 'ru-RU',
-
-    jsonData: {
-      comment: comment
+     metadata: {
+      JsonData: {
+        comment: `clickid: ${comment}`
+      }
     },
-
     userInfo: {
       accountId: email,
       firstName: firstName,
