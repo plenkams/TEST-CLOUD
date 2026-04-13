@@ -3,7 +3,11 @@ const publicId = 'pk_0a6d2638d233c9299c8fae7cd7e2e';
 document.getElementById('donateForm').addEventListener('submit', function(e){
   e.preventDefault();
 
-  const fio = document.getElementById('fio').value.trim();
+ const lastName = document.getElementById('lastName').value.trim();
+  const firstName = document.getElementById('firstName').value.trim();
+  const middleName = document.getElementById('middleName').value.trim();
+
+  const fullName = `${lastName} ${firstName} ${middleName}`.trim();
   const email = document.getElementById('email').value.trim();
   const phone = document.getElementById('phone').value.trim();
   const comment = document.getElementById('comment').value.trim();

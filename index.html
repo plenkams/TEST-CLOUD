@@ -17,24 +17,30 @@
 
 <form id="donateForm">
 
-<label>ФИО</label>
-<input id="fio" required>
+<label>Фамилия</label>
+<input id="lastName" required placeholder="Иванов">
+
+<label>Имя</label>
+<input id="firstName" required placeholder="Иван">
+
+<label>Отчество</label>
+<input id="middleName" placeholder="Иванович">
 
 <label>Email</label>
-<input id="email" required>
+<input id="email" required placeholder="mail@mail.ru">
 
 <label>Телефон</label>
 <input id="phone" required placeholder="+79990000000">
 
 <label>Комментарий</label>
-<textarea id="comment"></textarea>
+<textarea id="comment" placeholder="Ваш комментарий"></textarea>
 
 <label>Сумма</label>
 <input id="amount" type="number" value="100">
 
 <div class="row">
-<input id="monthly" type="checkbox">
-<span>Ежемесячный платеж</span>
+  <input id="monthly" type="checkbox">
+  <span>Ежемесячный платеж</span>
 </div>
 
 <button type="submit">Оплатить</button>
