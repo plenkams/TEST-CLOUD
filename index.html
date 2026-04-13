@@ -6,48 +6,48 @@
 <title>Благотворительный фонд</title>
 
 <link rel="stylesheet" href="css/style.css">
-
 <script src="https://widget.cloudpayments.ru/bundles/cloudpayments.js"></script>
 </head>
 
 <body>
 
 <div class="wrap">
-<h1>Благотворительный фонд</h1>
+  <h1>Благотворительный фонд</h1>
 
-<form id="donateForm">
+  <form id="donateForm">
 
-<label>Фамилия</label>
-<input id="lastName" required placeholder="Иванов">
+    <label for="lastName">Фамилия</label>
+    <input id="lastName" required placeholder="Иванов">
 
-<label>Имя</label>
-<input id="firstName" required placeholder="Иван">
+    <label for="firstName">Имя</label>
+    <input id="firstName" required placeholder="Иван">
 
-<label>Отчество</label>
-<input id="middleName" placeholder="Иванович">
+    <label for="middleName">Отчество</label>
+    <input id="middleName" placeholder="Иванович">
 
-<label>Email</label>
-<input id="email" required placeholder="mail@mail.ru">
+    <label for="email">Email</label>
+    <input id="email" type="email" required placeholder="mail@mail.ru">
 
-<label>Телефон</label>
-<input id="phone" required placeholder="+79990000000">
+    <label for="phone">Телефон</label>
+    <input id="phone" required placeholder="+79990000000">
 
-<label>Комментарий</label>
-<textarea id="comment" placeholder="Ваш комментарий"></textarea>
+    <label for="comment">Комментарий</label>
+    <textarea id="comment" placeholder="Ваш комментарий"></textarea>
 
-<label>Сумма</label>
-<input id="amount" type="number" value="100">
+    <label for="amount">Сумма</label>
+    <input id="amount" type="number" min="1" value="100" required>
 
-<div class="row">
-  <input id="monthly" type="checkbox">
-  <span>Ежемесячный платеж</span>
-</div>
+    <div class="row">
+      <input id="monthly" type="checkbox">
+      <span>Ежемесячный платеж</span>
+    </div>
 
-<button type="submit">Оплатить</button>
+    <button type="submit">Оплатить</button>
 
-</form>
+  </form>
 </div>
 
 <script src="js/app.js"></script>
+
 </body>
 </html>
