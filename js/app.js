@@ -38,12 +38,18 @@ document.getElementById('donateForm').addEventListener('submit', function(e){
     description: comment || 'Пожертвование',
     paymentSchema: 'Single',
     culture: 'ru-RU',
+      metadata: {
+    comment: comment
+  },
     userInfo: {
-      accountId: fio,
-      fullName: fio,
-      phone: '+' + cleanPhone,
-      email: email
-    }
+    accountId: email,
+    firstName: firstName,
+    lastName: lastName,
+    middleName: middleName,
+    fullName: fullName,
+    phone: '+' + cleanPhone,
+    email: email
+}
   };
 
   if(monthly){
