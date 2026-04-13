@@ -51,8 +51,8 @@ document.getElementById('donateForm').addEventListener('submit', function (e) {
     paymentSchema: 'Single',
     culture: 'ru-RU',
 
-metadata: {
-  comment: comment
+JsonData: {
+  comment: "Ежемесячное пожертвование"
 },
 
 userInfo: {
