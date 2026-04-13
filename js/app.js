@@ -51,25 +51,29 @@ document.getElementById('donateForm').addEventListener('submit', function (e) {
     paymentSchema: 'Single',
     culture: 'ru-RU',
 
-JsonData: {
-  comment: "Ежемесячное пожертвование"
-},
+    metadata: {
+      comment: comment
+    },
 
-userInfo: {
+    JsonData: {
+      comment: comment
+    },
+
+    userInfo: {
       accountId: email,
       firstName: firstName,
       lastName: lastName,
       middleName: middleName,
       fullName: fullName,
-      phone: '+' + cleanPhone,
-      email: email
-    }
+     phone: '+' + cleanPhone,
+     email: email
+   }
   };
 
   if (monthly) {
-    intentParams.recurrent = {
-      interval: 'Month',
-      period: 1
+   intentParams.recurrent = {
+     interval: 'Month',
+     period: 1
     };
   }
 
