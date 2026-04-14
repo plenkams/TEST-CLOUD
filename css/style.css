@@ -33,6 +33,7 @@ input, textarea{
   border:1px solid #d0d7de;
   border-radius:10px;
   box-sizing:border-box;
+  font: inherit;
 }
 
 textarea{
