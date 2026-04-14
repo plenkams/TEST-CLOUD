@@ -51,11 +51,9 @@ const intentParams = {
   paymentSchema: 'Single',
   culture: 'ru-RU',
 
-  metadata: {
+   metadata: {
     comment: comment
   },
-
-  comment: comment,
 
   userInfo: {
     accountId: email,
@@ -64,7 +62,12 @@ const intentParams = {
     middleName: middleName,
     fullName: fullName,
     phone: '+' + cleanPhone,
-    email: email
+    email: email,
+
+    customField: {
+      name: 'comment',
+      value: comment
+    }
   }
 };
 
